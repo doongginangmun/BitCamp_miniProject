@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2D Game Dev</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|ZCOOL+QingKe+HuangYou');
+
+* {
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	box-sizing: border-box;
+ 
+}
+body{
+    background-image: url("image/bground.jpg");
+    background-size: cover;
+}
+
+.fn-font {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+.container {
+	width:1440px;
+	margin:0 auto;
+}
+header {
+	width:100%;
+	height:80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header > h2 {
+	margin-left:20px;
+}
+header > nav {
+	width:600px;
+	height:0px;
+}
+header ul {
+	width:100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.main .sub-menu{
+    display: none;
+    position: absolute;
+    
+}
+header .main>li:hover .sub-menu{
+    display: block;
+}
+header .main>li a{
+    display: block;
+}
+
+ul a:hover{
+  color: blue;
+  
+}
+#visual{
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(image/bg2.jpg);
+    background-size:contain;
+    background-position: 0% 70%;
+    width:100%;
+    height:600px;
+    
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+#visual *{
+    color:white;
+}
+#visual h2{
+    font-size:60px;
+    animation-name:change;
+    animation-duration: 2s;
+    animation-direction:alternate;
+    animation-iteration-count: infinite;
+}
+#visual p{
+    margin:30px 0;
+}
+.btn{
+    width:120px;
+    padding:8px 12px;
+    border:3px solid #ddd;
+    background-color: #70aa96;
+    border-radius:4px;
+}
+.btn:hover{
+    background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2));
+}
+#content{
+    display: flex;
+    justify-content: space-around;
+    margin-top:40px;
+}
+#content >.item{
+    width:30%;
+}
+.img{
+    width:100%;
+    height:350px;
+}
+.img > img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+   
+    
+}
+.item .info{
+    background: #fff;
+    padding:20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow:0 0 20px 0 rgba(0,0,0, 0.7);
+}
+.button-row{
+    width:100%;
+    text-align:right;
+}
+.btn-sm{
+    padding:8px 12px;
+    font-size:12px;
+    color:white;
+    width:auto;
+    border:2px solid #ddd;
+}
+.info > h4{
+    font-size:30px;
+    color:rgba(0,0,0,0.9);
+}
+.info > p{
+    color:#555;
+}
+#banner {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#banner > .photo{
+    flex:3;
+    min-height:300px;
+    background-image:url("image/butter-fly.jpg");
+    background-size:contain;
+    
+}
+#banner > .text{
+    flex:2;
+    padding:20px;
+    background-color: #70aa96;
+}
+.text *{
+    color:#fff;
+}
+.text >h1{
+    margin-top:30px;
+    font-size: 40px;
+    display: inline;
+}
+.text >p{
+    margin-top: 20px;
+   
+}
+audio{
+    padding: 10px;
+    float:right;
+}
+@keyframes change{
+    from{
+        transform: scale(1.2,1.2);
+    }
+}
+footer{
+    background-color: #3c3935;
+}
+footer img{
+    width: 90px;
+    height:100px;
+    border-radius: 50%;
+    margin-top: 7px;
+}
+.foo_div{
+    float: left;
+}
+.foo_div1{
+    text-align:center;
+}
+.foo_div1 span{
+    font-size: 15px;
+    color:white;
+}
+.foo_div1 p{
+    margin-top:5px;
+    color:white;
+}
+
+  </style>
+  <body>
+    <div class="container">
+      <header>
+        <h2><a href="digimoncom.html">digimon</a></h2>
+        <nav>
+          <ul class="main">
+            <li><a href="#">애니메이션 & 정보</a>
+            <ul class="sub-menu">
+                <li><a href="#">디지몬 어드벤처</a></li>
+                <li><a href="#">파워 디지몬</a></li>
+                <li><a href="#">디지몬 테이머즈</a></li>
+                <li><a href="#">디지몬 프론티어</a></li>
+            </ul>
+        </li>
+            <li><a href="#">디지몬 굿즈</a>
+            <ul class="sub-menu">
+                <li><a href="#">디지몬 피규어</a></li>
+                <li><a href="#">만화책</a></li>
+                <li><a href="#">기타 제품</a></li>
+            </ul>
+            </li>
+            <li><a href="#">카드 & 게임</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="visual">
+        <h2>Welcome Digital World!</h2>
+        <p class="fn-font">디지털 월드에 오신것을 환영합니다!<br>동심으로 돌아가 디지몬들과 함께놀아요~</p>
+        <button class="btn fn-font">작품보기</button>
+      </section>
+
+      <section id="content">
+          <div class="item">
+              <div class="img">
+                  <img src="image/goods.jpg">
+              </div>
+              <div class="info">
+                  <h4 class="fn-font">디지몬 굿즈</h4>
+                  <p class="fn-font">
+                      다양한 디지몬 굿즈~
+                      퀄리티좋은 상품들을 만나보세요~
+                  </p>
+                  <div class="button-row">
+                      <button class="btn fn-font btn-sm" onclick="location.href='#'">더 알아보기</button>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="img">
+                  <img src="image/digimongame.jpg">    
+              </div>
+              <div class="info">
+                  <h4 class="fn-font">게임정보</h4>
+                  <p class="fn-font">
+                      디지몬은 만화 뿐만아니라 게임도 재미있습니다.
+                      핫한게임과 관련된 정보를 확인해보세요~
+                  </p>
+                  <div class="button-row">
+                      <button class="btn fn-font btn-sm">더 알아보기</button>
+                  </div>
+              </div>
+          </div>
+            <div class="item">
+                <div class="img">
+                    <img src="image/digimonmovie.jpg">
+                </div>
+                <div class="info">
+                    <h4 class="fn-font">극장판 소식</h4>
+                    <p class="fn-font">
+                        일반 애니메이션 뿐만아니라 극장판에서 오는
+                        또다른 감동과 스토리가 궁금하시다면~
+                    </p>
+                <div class="button-row">
+                    <button class="btn fn-font btn-sm">더 알아보기</button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id ="banner">
+          <div class="photo"></div>
+          <div class="text">
+              <h1>butterfly</h1>
+              <audio id=audio src="/sound/Butterfly.mp3" controls autoplay loop></audio>
+              <p class="fn-font">지금 배경음악은 butterfly입니다.<br>
+                디지몬에는 이런 명곡들이 많이있습니다.<br>
+                만약 디지몬 애니메이션 & 극장판에 삽입된 테마곡들을 더 들어보고 싶다면~</p>
+              <div class="button-row">
+                  <button class="btn fn-font">더 알아보기</button>
+                 
+              </div>
+          </div>
+      </section>
+     <footer>
+         <div class="foo_div">
+             <img scr="">
+         </div>
+         <div class="foo_div1">
+            <span>(주)digi.com</span>  <span>|</span>
+            <span>대표 : 아구몬</span>  <span> |</span>
+            <span>사업자등록번호 :000-00-00000</span> <span>|</span>
+            <p>주소 : 대한민국 어디엔가 살고 있는 김꼬꼬미네 집</p>
+            <p>Copyright (C) 2017 Junil-Hwang All Right Reserved</p>
+           
+           
+         </div>
+     </footer>
+    </div>
+  </body>
+</html>
